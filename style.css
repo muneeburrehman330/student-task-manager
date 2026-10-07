@@ -61,3 +61,19 @@ button {
 button:hover {
     background-color: #24466d;
 } 
+
+function searchTasks() {
+    let searchText = document.getElementById("searchTask").value.toLowerCase();
+
+    let tasks = document.querySelectorAll(".task-card");
+
+    tasks.forEach(function(task) {
+        let taskText = task.innerText.toLowerCase();
+
+        if (taskText.includes(searchText)) {
+            task.style.display = "block";
+        } else {
+            task.style.display = "none";
+        }
+    });
+}
